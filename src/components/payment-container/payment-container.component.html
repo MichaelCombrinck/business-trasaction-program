@@ -1,0 +1,61 @@
+<mat-toolbar color="warn">
+    <span>Basket</span>
+  </mat-toolbar>
+  
+  <div class="basket-container">
+    @if(selectedProducts.length === 0) {
+        <ng-container>
+            <p>Your basket is empty.</p>
+          </ng-container>
+    } @else {
+       
+        @for(item of selectedProducts; track selectedProducts){
+        <mat-list>
+            
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <mat-card-title-group>
+                    <img mat-card-md-image src="{{item.image}}"  alt="Image of Product">
+                    <mat-card-title>{{item.name}}</mat-card-title>
+                    <mat-card-subtitle>Quantity: {{item.quantity}}</mat-card-subtitle>
+                  </mat-card-title-group>
+                </mat-card-header>
+                <mat-card-content class="card-content">
+                    <h3 style="color: #1a237e;">R{{item.totalAmount}}</h3>
+                    <button mat-raised-button color="warn" (click)="onRemoveItemClick(item)">Remove</button>
+                </mat-card-content>
+              </mat-card>
+            
+        </mat-list>
+        }
+        <p>Total Amount: R {{getBill()}}</p>
+        <button mat-raised-button color="warn" (click)="onClearBasketClick()">Clear Basket</button>
+
+        <div>
+          <div>
+            <label>Paid: 
+              <input type="number" [(ngModel)]="paid" />
+            </label>
+          </div>
+          <app-bill-selection (billSelected)="onBillSelected($event)"></app-bill-selection>
+         
+          @if(change.length) {
+            <div>
+              <h3>Change:</h3>
+              <ul>
+                @for(bill of change; track bill){
+                  <li >
+                    {{ bill.value }} x {{ bill.denomination }} ({{ bill.isRand ? 'R' : 'c' }})
+                  </li>
+                }
+                
+              </ul>
+            </div>
+          }
+          
+        </div>
+       
+        
+        
+    }
+  </div>

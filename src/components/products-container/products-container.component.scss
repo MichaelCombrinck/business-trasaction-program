@@ -1,0 +1,17 @@
+.title-section {
+    display: flex;
+    height: 100%;
+    margin: 0; // This was added seen as mat-h1 has margin applied which restricts the centering of the item 
+    align-items: center;
+    padding-left: 20px;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    margin: 0;
+}

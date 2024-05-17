@@ -30,7 +30,21 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss",
+              {
+                "input": "node_modules/tailwindcss/base.css",
+                "bundleName": "tailwind-base"
+            },
+            {
+                "input": "node_modules/tailwindcss/components.css",
+                "bundleName": "tailwind-components"
+            },
+            {
+                "input": "node_modules/tailwindcss/utilities.css",
+                "bundleName": "tailwind-utilities"
+            }
+              
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -95,12 +109,28 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "src/styles.scss",
+              {
+                  "input": "node_modules/tailwindcss/base.css",
+                  "bundleName": "tailwind-base"
+              },
+              {
+                  "input": "node_modules/tailwindcss/components.css",
+                  "bundleName": "tailwind-components"
+              },
+              {
+                  "input": "node_modules/tailwindcss/utilities.css",
+                  "bundleName": "tailwind-utilities"
+              }
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "821c69ac-209b-4a46-90a4-a3fc6ac6e0b9"
   }
 }

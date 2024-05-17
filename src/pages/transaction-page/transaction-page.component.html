@@ -1,0 +1,14 @@
+<div class="container md:flex md:flex-col max-w-full">
+    <div class="title-container ">
+        <h1>Transactional Page</h1>
+    </div>
+    <div class="page md:flex lg:flex-row flex-col">
+        <div class="left-section">
+            <app-products-container (productAdded)="onProductAdded($event)"></app-products-container>
+        </div>
+        <div class="right-section">
+            <app-payment-container (productAdded)="onProductAdded($event)"></app-payment-container>
+            
+        </div>
+    </div>
+</div>

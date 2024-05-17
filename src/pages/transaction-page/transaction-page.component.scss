@@ -1,0 +1,16 @@
+.page {
+    width: 100%;
+    display: flex;
+}
+
+.left-section {
+    flex: 4;
+}
+
+.right-section {
+    flex: 2;
+}
+
+.container {
+    height: 100%;
+}
