@@ -10,11 +10,5 @@ import { ProductsContainerComponent } from '../../components/products-container/
   styleUrl: './transaction-page.component.scss'
 })
 export class TransactionPageComponent {
-  selectedProducts: any[] = [];
-
-  onProductAdded(product: any): void {
-    console.log('value of product ', product)
-    this.selectedProducts.push(product);
-    console.log('List ', this.selectedProducts);
-  }
+  
 }

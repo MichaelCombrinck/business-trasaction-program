@@ -1,18 +1,3 @@
 <h2>Payment:</h2>
 
-@for(item of bills; track bills){
-    <div>
-        <mat-form-field floatLabel="always" [formGroup]="BillsFormGroup"> 
-            <input matInput type="number" class="example-right-align" placeholder="0" [formControlName]="getControlName(item.denomination)" (change)="onBillChange()">
-            @if(isRand(item)) {
-                <mat-label>R {{item.denomination}}</mat-label>
-                
-            }@else {
-                <mat-label>{{item.denomination}}0 c</mat-label>
-            }
-            <span matTextPrefix>&nbsp;</span>
-          </mat-form-field>
-    </div>
-}
-
 <button mat-raised-button color="warn" (click)="onBillChange()">Pay</button>

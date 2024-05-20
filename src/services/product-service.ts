@@ -39,7 +39,6 @@ export class ProductService {
         const removeProductIndex = this.product.indexOf(product, 0);
         if (removeProductIndex !== -1) {
             this.product.splice(removeProductIndex, 1);
-            console.log('Removed product at index', removeProductIndex);
         }
     }
 

@@ -6,7 +6,7 @@ import { Bill, Payment } from '../interfaces/bill-interface';
   providedIn: 'root'
 })
 export class PaymentService {
-    availableBills: Bill[] = [
+    public availableBills: Bill[] = [
         { denomination: 0.10, value: 0.10, isCent: true, isRand: false },
         { denomination: 0.50, value: 0.50, isCent: true, isRand: false },
         { denomination: 1, value: 1, isCent: false, isRand: true },
@@ -16,29 +16,33 @@ export class PaymentService {
         { denomination: 200, value: 200, isCent: false, isRand: true }
       ];
     
-      calculateChange(amountPaid: number, cost: number): Bill[] {
+      public calculateChange(amountPaid: number, cost: number): Bill[] | string {
         let change = amountPaid - cost;
-        console.log('AmountPaid', amountPaid);
-        console.log('Cost ', cost)
-        console.log('Change', change)
+       
         let changeBills: Bill[] = [];
     
-        if (change <= 0) {
-          return changeBills; // No change needed or insufficient payment
+        if (change < 0) {
+          return 'Insufficient amount paid'; 
         }
     
+        if (change === 0) {
+          return 'No change required, amount has been fully paid'; 
+        }
+    
+
         for (let bill of this.availableBills.sort((a, b) => b.denomination - a.denomination)) {
           let count = Math.floor(change / bill.denomination);
           if (count > 0) {
             changeBills.push({ denomination: bill.denomination, value: count, isCent: bill.isCent, isRand: bill.isRand });
             change -= count * bill.denomination;
           }
+          
         }
-        console.log('This is the amount of change which should be given.', changeBills)
+        
         return changeBills;
       }
     
-      validatePayment(amountPaid: number, cost: number): boolean {
+      public validatePayment(amountPaid: number, cost: number): boolean {
         return amountPaid >= cost;
       }
 }
