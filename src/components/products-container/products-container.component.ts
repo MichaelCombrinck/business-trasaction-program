@@ -13,7 +13,7 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 })
 export class ProductsContainerComponent {
   selectedProducts: any[] = [];
-  @Output() productAdded: EventEmitter<any> = new EventEmitter<any>();
+  
 
   constructor() { }
 

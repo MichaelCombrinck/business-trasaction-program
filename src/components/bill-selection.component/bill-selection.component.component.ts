@@ -19,13 +19,6 @@ export class BillSelectionComponentComponent {
   BillsFormGroup:FormGroup = new FormGroup(
     {
       amountPaid: new FormControl('0', Validators.required),
-      // tenCents: new FormControl('0', Validators.required),
-      // fiftyCents: new FormControl('0', Validators.required),
-      // oneRand: new FormControl('0', Validators.required),
-      // fiveRand: new FormControl('0', Validators.required),
-      // tenRand: new FormControl('0', Validators.required),
-      // fiftyRand: new FormControl('0', Validators.required),
-      // twoHundredRand: new FormControl('0', Validators.required),
     }
   )
 

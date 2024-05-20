@@ -33,15 +33,18 @@
 
         <div>
           <div>
-            <label>Paid: 
-              <input type="number" [(ngModel)]="paid" />
-            </label>
+            <h2>Paid: </h2>
+           
+            <mat-form-field>
+              <input matInput type="number" [(ngModel)]="paid" />
+            </mat-form-field>
+            
           </div>
           <app-bill-selection (billSelected)="onBillSelected($event)"></app-bill-selection>
          
           @if(change.length) {
             <div>
-              <h3>Change:</h3>
+              <h2>Change:</h2>
               <ul>
                 @for(bill of change; track bill){
                   <li >
