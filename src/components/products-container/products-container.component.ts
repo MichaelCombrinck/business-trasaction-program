@@ -12,12 +12,5 @@ import { ProductCardComponent } from '../product-card/product-card.component';
   styleUrl: './products-container.component.scss'
 })
 export class ProductsContainerComponent {
-  selectedProducts: any[] = [];
-  
 
-  constructor() { }
-
-  onProductAdded(product: any): void {
-    this.selectedProducts.push(product);
-  }
 }
