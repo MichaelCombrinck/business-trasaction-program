@@ -16,21 +16,27 @@ export class PaymentService {
         { denomination: 200, value: 200, isCent: false, isRand: true }
       ];
     
-      public calculateChange(amountPaid: number, cost: number): Bill[] {
+      public calculateChange(amountPaid: number, cost: number): Bill[] | string {
         let change = amountPaid - cost;
        
         let changeBills: Bill[] = [];
     
-        if (change <= 0) {
-          return changeBills; // No change needed or insufficient payment
+        if (change < 0) {
+          return 'Insufficient amount paid'; 
         }
     
+        if (change === 0) {
+          return 'No change required, amount has been fully paid'; 
+        }
+    
+
         for (let bill of this.availableBills.sort((a, b) => b.denomination - a.denomination)) {
           let count = Math.floor(change / bill.denomination);
           if (count > 0) {
             changeBills.push({ denomination: bill.denomination, value: count, isCent: bill.isCent, isRand: bill.isRand });
             change -= count * bill.denomination;
           }
+          
         }
         
         return changeBills;

@@ -28,6 +28,7 @@ export class PaymentContainerComponent {
   amountPaid: number = 0;
   bills: Bill[] = [];
   change: Bill[] = [];
+  changeMessage: string = '';
 
   
   constructor(private _productService: ProductService, private _paymentService: PaymentService) {
@@ -54,11 +55,14 @@ export class PaymentContainerComponent {
   onBillSelected(bills: Bill[]) {
     this.bills = bills;
     this.amountPaid = bills.reduce((sum, bill) => sum + (bill.denomination * bill.value), 0);
-    if (this._paymentService.validatePayment(this.paid, this._productService.getBillsTotal())) {
-      this.change = this._paymentService.calculateChange(this.paid, this._productService.getBillsTotal());
-    } else {
+    const result = this._paymentService.calculateChange(this.paid, this._productService.getBillsTotal());
+    
+    if (typeof result === 'string') {
+      this.changeMessage = result;
       this.change = [];
-      alert('Total payment does not cover the cost.');
+    } else {
+      this.changeMessage = '';
+      this.change = result;
     }
   }
 }

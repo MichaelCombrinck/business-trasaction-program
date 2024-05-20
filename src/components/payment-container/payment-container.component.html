@@ -42,20 +42,28 @@
           </div>
           <app-bill-selection (billSelected)="onBillSelected($event)"></app-bill-selection>
          
-          @if(change.length) {
+          @if(changeMessage){
+            <div style="padding: 16px;">
+              <h3>{{ changeMessage }}</h3>
+            </div>
+          }
+         
+
+          @if(change.length > 0) {
             <div>
               <h2>Change:</h2>
               <ul>
                 @for(bill of change; track bill){
-                  <li >
+                 
+                  <li>
                     {{ bill.value }} x {{ bill.denomination }} ({{ bill.isRand ? 'R' : 'c' }})
                   </li>
                 }
+               
                 
               </ul>
             </div>
           }
-          
         </div>
        
         
