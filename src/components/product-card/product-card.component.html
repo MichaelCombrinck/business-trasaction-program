@@ -4,14 +4,12 @@
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
               <mat-card-title>{{product.name}}</mat-card-title>
-             
             </mat-card-header>
             <img class="product-image" mat-card-image src="{{product.image}}" alt="{{product.name}}" >
             <mat-card-content>
-              <p>
-                {{product.description}}
-              </p>
-              <h3>R{{product.amount}}</h3>
+             <div class="pt-5">
+              <h2>R{{product.amount}}</h2>
+             </div>
             </mat-card-content>
             <mat-card-actions>
               <button mat-flat-button (click)="onAddProductClick(product)" color="primary">ADD</button>
