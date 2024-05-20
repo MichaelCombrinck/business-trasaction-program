@@ -17,42 +17,36 @@ export class ProductCardComponent {
     {
       name: 'Apple',
       amount: 10,
-      description: 'Description of Product 1',
       image: 'assets/images/apple.jpg',
       quantity: 1,
     },
     {
       name: 'Steak',
       amount: 20,
-      description: 'Description of Product 2',
       image: 'assets/images/steak-product.jpg',
       quantity: 1,
     },
     {
       name: 'Banana',
       amount: 30,
-      description: 'Description of Product 3',
       image: 'assets/images/banana.jpg',
       quantity: 1,
     },
     {
       name: 'Chops',
       amount: 40,
-      description: 'Description of Product 4',
       image: 'assets/images/chops-product.png',
       quantity: 1,
     },
     {
       name: 'Fish',
       amount: 50,
-      description: 'Description of Product 5',
       image: 'assets/images/fish-product.png',
       quantity: 1,
     },
     {
       name: 'Milk',
       amount: 60,
-      description: 'Description of Product 6',
       image: 'assets/images/milk-product.jpg',
       quantity: 1,
     }
