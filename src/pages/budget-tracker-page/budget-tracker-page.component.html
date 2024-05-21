@@ -1,1 +1,22 @@
-<p>budget-tracker-page works!</p>
+<div class="budget-container">
+    <h1>Budget Tracker</h1>
+    
+    <div class="budget-form">
+      <input type="text" placeholder="Item" [(ngModel)]="newItem">
+      <input type="number" placeholder="Amount" [(ngModel)]="newAmount">
+      <button (click)="addItem()">Add Item</button>
+    </div>
+  
+    <div class="budget-list">
+        @for (item of items; track $index) {
+            <div class="budget-item">
+                <p>{{ item.name }} - R{{ item.amount }}</p>
+                <div class="budget-actions">
+                  <button (click)="editItem($index)">Edit</button>
+                  <button (click)="deleteItem($index)">Delete</button>
+                </div>
+              </div>
+        }
+      
+    </div>
+  </div>
