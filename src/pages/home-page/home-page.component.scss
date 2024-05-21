@@ -1,0 +1,108 @@
+.home-container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .feature-card {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 32px);
+    margin: 16px;
+    max-width: calc(33.333% - 32px);
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: #fff;
+    text-align: left;
+  }
+  
+  .feature-card h2 {
+    margin: 0 0 10px;
+  }
+  
+  .feature-card p {
+    margin: 0;
+  }
+  
+  .feature-card a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .feature-card a:hover {
+    text-decoration: underline;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-manager {
+    background: #3498db; 
+  }
+  
+  .task-manager:hover {
+    background: #2980b9;
+  }
+  
+  .calendar {
+    background: #2ecc71; 
+  }
+  
+  .calendar:hover {
+    background: #27ae60;
+  }
+  
+  .notes {
+    background: #f39c12; 
+  }
+  
+  .notes:hover {
+    background: #e67e22;
+  }
+  
+  .weather {
+    background: #e74c3c; 
+  }
+  
+  .weather:hover {
+    background: #c0392b;
+  }
+  
+  .budget-tracker {
+    background: #9b59b6; 
+  }
+  
+  .budget-tracker:hover {
+    background: #8e44ad;
+  }
+  
+  .transaction {
+    background: #1abc9c; 
+  }
+  
+  .transaction:hover {
+    background: #16a085;
+  }
+  
+  @media (max-width: 768px) {
+    .feature-card {
+      flex: 1 1 calc(50% - 32px);
+      max-width: calc(50% - 32px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature-card {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  

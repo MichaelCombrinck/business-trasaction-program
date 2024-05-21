@@ -10,7 +10,6 @@ export class ProductService {
     public indexOfProduct:number = 0;
     public billTotal:number = 0;
     
-
     public addProduct(product:Product) {
         this.product.push(product);
         this.increaseAmount();
@@ -32,8 +31,6 @@ export class ProductService {
     public increaseAmount() {
         this.product[this.indexOfProduct].totalAmount = this.product[this.indexOfProduct].amount * this.product[this.indexOfProduct].quantity;
     }
-
-
 
     public removeProduct(product: Product) {
         const removeProductIndex = this.product.indexOf(product, 0);

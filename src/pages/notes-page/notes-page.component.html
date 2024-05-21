@@ -1,0 +1,21 @@
+<div class="notes-container">
+    <h1>Notes</h1>
+    
+    <div class="note-form">
+      <textarea [(ngModel)]="newNote" placeholder="Write your note here..."></textarea>
+      <button (click)="addNote()">Add Note</button>
+    </div>
+  
+    <div class="notes-list">
+        @for (note of notes; track $index) {
+      <div class="note-card">
+        <p>{{ note }}</p>
+        <div class="note-actions">
+          <button (click)="editNote($index)">Edit</button>
+          <button (click)="deleteNote($index)">Delete</button>
+        </div>
+      </div>
+    }
+    </div>
+  </div>
+  
