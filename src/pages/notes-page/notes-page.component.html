@@ -3,7 +3,7 @@
     
     <div class="note-form">
       <textarea [(ngModel)]="newNote" placeholder="Write your note here..."></textarea>
-      <button (click)="addNote()">Add Note</button>
+      <button (click)="onAddNoteClick()">Add Note</button>
     </div>
   
     <div class="notes-list">
@@ -11,8 +11,8 @@
       <div class="note-card">
         <p>{{ note }}</p>
         <div class="note-actions">
-          <button (click)="editNote($index)">Edit</button>
-          <button (click)="deleteNote($index)">Delete</button>
+          <button (click)="onEditNoteClick($index)">Edit</button>
+          <button (click)="onDeleteNoteClick($index)">Delete</button>
         </div>
       </div>
     }

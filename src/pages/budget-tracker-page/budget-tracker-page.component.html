@@ -12,8 +12,8 @@
             <div class="budget-item">
                 <p>{{ item.name }} - R{{ item.amount }}</p>
                 <div class="budget-actions">
-                  <button (click)="editItem($index)">Edit</button>
-                  <button (click)="deleteItem($index)">Delete</button>
+                  <button (click)="onEditItemClick($index)">Edit</button>
+                  <button (click)="onDeleteItemClick($index)">Delete</button>
                 </div>
               </div>
         }

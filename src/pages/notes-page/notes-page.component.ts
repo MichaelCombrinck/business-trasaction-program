@@ -13,7 +13,7 @@ export class NotesPageComponent {
   newNote: string = '';
   editIndex: number | null = null;
 
-  addNote() {
+  onAddNoteClick() {
     if (this.editIndex !== null) {
       this.notes[this.editIndex] = this.newNote;
       this.editIndex = null;
@@ -23,12 +23,12 @@ export class NotesPageComponent {
     this.newNote = '';
   }
 
-  editNote(index: number) {
+  onEditNoteClick(index: number) {
     this.newNote = this.notes[index];
     this.editIndex = index;
   }
 
-  deleteNote(index: number) {
+  onDeleteNoteClick(index: number) {
     this.notes.splice(index, 1);
     if (this.editIndex !== null && this.editIndex >= index) {
       this.editIndex = null;

@@ -27,13 +27,13 @@ export class BudgetTrackerPageComponent {
     }
   }
 
-  editItem(index: number) {
+  onEditItemClick(index: number) {
     this.newItem = this.items[index].name;
     this.newAmount = this.items[index].amount;
     this.editIndex = index;
   }
 
-  deleteItem(index: number) {
+  onDeleteItemClick(index: number) {
     this.items.splice(index, 1);
     if (this.editIndex !== null && this.editIndex >= index) {
       this.editIndex = null;
