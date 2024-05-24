@@ -1,14 +1,28 @@
-<mat-card>
-    <mat-list>
+<mat-card class="task-list-container ">
+  <mat-list>
         @for (task of tasks; track $index) {
-            <mat-list-item>
-                <h3 mat-line>{{ task.title }}</h3>
-                <p mat-line>{{ task.description }}</p>
+          <div class="flex justify-between">
+            <div class="flex justify-start">
+              <mat-list-item class="w-full p-4">
+                <h3>{{ task.title }}</h3>
+              </mat-list-item>
+                <mat-list-item class="w-full p-4">
+                    <p>{{ task.description }}</p>
+                  </mat-list-item>
+            </div>
+            <div class="flex justify-end">
+              <mat-list-item class="w-full p-4">
+                <mat-checkbox [color]="'warn'" color="warn" >
+                </mat-checkbox>
+              </mat-list-item>
+              <mat-list-item class="w-full p-4">
                 <button mat-icon-button color="warn" (click)="onDeleteTaskClick(task)">
                   <mat-icon>delete</mat-icon>
                 </button>
               </mat-list-item>
+            </div>
+          </div>
         }
-    </mat-list>
+      </mat-list>
   </mat-card>
   
